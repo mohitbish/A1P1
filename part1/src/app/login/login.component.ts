@@ -26,13 +26,9 @@ export class LoginComponent implements OnInit {
   check(){
     for (let i = 0; i < this.userList.length; i++) { 
       if (this.userList[i].username == this.username){
-          this.router.navigateByUrl('/account'); 
-      }else{
-        alert("wrong info")
+          this.router.navigateByUrl('/account');  
       }
     }
-    
-    
   }
 
   ngOnInit(): void {
