@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
   check(){
     for (let i = 0; i < this.userList.length; i++) { 
-      if (this.userList[i].username == this.username){
+      if (this.userList[i].username == this.username && this.password == this.userList[i].password ){
           sessionStorage.setItem('userid', this.userList[i].id.toString());
           sessionStorage.setItem('username', this.userList[i].username);
           sessionStorage.setItem('role', this.userList[i].role);
