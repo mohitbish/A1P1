@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { Router} from '@angular/router';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  username = " ";
+  password = " ";
+  userList = [
+    {"username":"a@g.com","password":"123", "id": 1, "role":"Superadmin" },
+    {"username":"b@g.com","password":"123", "id": 3, "role":"Groupadmin"},
+    {"username":"c@g.com","password":"123", "id": 3, "role":"Groupassis"}
+    ];
+
+  constructor(private router: Router) { 
+    
+
+  }
+  check(){
+    for (let i = 0; i < this.userList.length; i++) { 
+      if (this.userList[i].username == this.username){
+          this.router.navigateByUrl('/account'); 
+      }else{
+        alert("wrong info")
+      }
+    }
+    
+    
+  }
 
   ngOnInit(): void {
   }
 
 }
+
+
