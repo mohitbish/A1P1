@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   check(){
     for (let i = 0; i < this.userList.length; i++) { 
       if (this.userList[i].username == this.username){
-          this.router.navigateByUrl('/account');  
+          this.router.navigateByUrl('/account'); 
       }
     }
   }
