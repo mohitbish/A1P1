@@ -6,6 +6,8 @@ angular setup
     ng generate component profile
     ng generate component logout
     ng generate component superadmin
+    ng generate component groupadmin
+    ng generate component groupassis
 
 server setup
     npm init

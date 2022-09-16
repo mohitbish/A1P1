@@ -25,9 +25,9 @@ module.exports = function(req, res) {
                 let i = extendedUserArray.findIndex(user =>
                     ((user.username == u)));
                 let userData = extendedUserArray[i];
-                userData["ok"] = true;
-                console.log(userData);
-                res.send(userData);
+                // userData["ok"] = true;
+                console.log(extendedUserArray);
+                res.send({"ok":true, "extendeduser":extendedUserArray[i]});
             })
         }
     });

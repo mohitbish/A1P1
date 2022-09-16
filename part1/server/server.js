@@ -19,7 +19,7 @@ app.use(cors());
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods ", "GET, PUT, POST, post, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, post, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
@@ -39,13 +39,13 @@ const httpServer = http.Server(app);
 
 const https = require('https'),
 httpsServer = https.createServer(app);
-httpServer.listen(PORT2, function() {
+httpServer.listen(PORT, function() {
     console.log(`http Server listening on port: ${PORT}`);
 });
 
-httpsServer.listen(PORT, () => {
+httpsServer.listen(PORT2, () => {
     console.log(`Starting htttps server at: ${PORT2}`);
 });
 
-app.post('/login', require('./routes/postLogin'));
-app.post('/loginafter', require('./routes/postLoginAfter'));
+app.post('/login', require('./routes/postlogin'));
+app.post('/loginafter', require('./routes/postloginafter'));
