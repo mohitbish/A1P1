@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { Router} from '@angular/router';
-import { NgModule } from '@angular/core';
+import {Router} from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
+const BACKEND_URL = 'http://localhost:3000';
+// for angular http methods
 
 @Component({
   selector: 'app-login',
@@ -10,34 +14,40 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  username = " ";
-  password = " ";
-  userList = [
-    {"username":"a@g.com","password":"123", "id": 1, "role":"Superadmin" },
-    {"username":"b@g.com","password":"123", "id": 3, "role":"Groupadmin"},
-    {"username":"c@g.com","password":"123", "id": 3, "role":"Groupassis"}
-    ];
-
-  constructor(private router: Router) { 
-    
-
-  }
-  check(){
-    for (let i = 0; i < this.userList.length; i++) { 
-      if (this.userList[i].username == this.username && this.password == this.userList[i].password ){
-          sessionStorage.setItem('userid', this.userList[i].id.toString());
-          sessionStorage.setItem('username', this.userList[i].username);
-          sessionStorage.setItem('role', this.userList[i].role);
-          sessionStorage.setItem('loginstatus', "true");
-          this.router.navigateByUrl('/account'); 
-      }
-    }
-  }
+  email = '';
+  password = '';
+  
+  constructor(private router:Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   }
+  submit(){
+    
+    let user = {username:this.email, pwd: this.password};
+ 
+  this.httpClient.post(BACKEND_URL + '/login', user, httpOptions)
+    .subscribe((data:any)=>{
+      alert("posting: " +JSON.stringify(user));
+
+      alert("postRes: " +JSON.stringify(data));
+
+      if (data.ok){
+        alert("correct");
+        sessionStorage.setItem('userid', data.userid.toString());
+        sessionStorage.setItem('userlogin', data.ok.toString());
+        sessionStorage.setItem('username', data.username);
+        sessionStorage.setItem('role', data.role);
+        
+        this.router.navigateByUrl("/account");
+      }
+      else { alert("email or password incorrect");}
+
+
+    })
+
+
+
+    
+  }
 
 }
-
-
