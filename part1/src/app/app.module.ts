@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
+import { SuperadminComponent } from './superadmin/superadmin.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     AccountComponent,
     ProfileComponent,
-    LogoutComponent
+    LogoutComponent,
+    SuperadminComponent
   ],
   imports: [
     BrowserModule,

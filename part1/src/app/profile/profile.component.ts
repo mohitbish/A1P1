@@ -30,6 +30,10 @@ export class ProfileComponent implements OnInit {
     this.username = sessionStorage.getItem('username')!;
     this.role = sessionStorage.getItem('role')!;
     this.userid = Number(sessionStorage.getItem('userid'));
+
+    if ((sessionStorage.getItem('userlogin')=="true") && (sessionStorage.getItem('role')=="superadmin") ){
+      this.router.navigateByUrl("/superadmin");
+    }
   }
 
   ngOnInit(): void {
