@@ -1,1 +1,21 @@
-<p>superadmin works!</p>
+<p>add user</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+  
+  
+  
+  
+        <!-- Login Form -->
+        <form>
+            <input type="email" name="email" [(ngModel)]=" email" class="fadeIn second" placeholder="email">
+            <input type="password" name="password" [(ngModel)]=" password" class="fadeIn third" placeholder="password">
+            <input type="text" name="role" [(ngModel)]="role" class="fadeIn third" placeholder="role">
+  
+        </form>
+  
+        <button (click)="submit()" class="fadeIn fourth"> submit</button>
+  
+  
+  
+    </div>
+</div>

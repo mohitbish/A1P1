@@ -49,3 +49,4 @@ httpsServer.listen(PORT2, () => {
 
 app.post('/login', require('./routes/postlogin'));
 app.post('/loginafter', require('./routes/postloginafter'));
+app.post('/superadmin', require('./routes/postsuperadmin'));

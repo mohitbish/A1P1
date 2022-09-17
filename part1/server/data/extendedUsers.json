@@ -1,5 +1,4 @@
-[
-    {"userid":1,"username":"m@g.com","role":"superadmin"},
-    {"userid":2,"username":"b@g.com","role":"groupadmin"},
-    {"userid":3,"username":"c@g.com","role":"groupassis"}
-]
+[{"userid":1,"username":"m@g.com","role":"superadmin"},
+{"userid":2,"username":"b@g.com","role":"groupadmin"},
+{"userid":3,"username":"c@g.com","role":"groupassis"},
+{"userid":4,"username":"d@g.com","role":"groupassis"}]

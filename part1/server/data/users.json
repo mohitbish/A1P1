@@ -1,13 +1,3 @@
-[{
-    "username": "m@g.com",
-    "pwd": "666"
-},
-{
-    "username": "b@g.com",
-    "pwd": "555"
-},
-{
-    "username": "c@g.com",
-    "pwd": "555"
-}
-]
+[{"username":"m@g.com","pwd":"666"},
+{"username":"b@g.com","pwd":"555"},
+{"username":"c@g.com","pwd":"555"},{"username":"d@g.com","password":"555"}]
