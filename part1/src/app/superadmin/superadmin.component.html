@@ -13,9 +13,19 @@
   
         </form>
   
-        <button (click)="submit()" class="fadeIn fourth"> submit</button>
+        <button (click)="add()" class="fadeIn fourth"> add</button>
   
   
   
     </div>
 </div>
+
+<p>remove user</p>
+<form>
+    <input type="email" name="email2" [(ngModel)]=" email2" class="fadeIn second" placeholder="email">
+    <input type="password" name="password2" [(ngModel)]=" password2" class="fadeIn third" placeholder="password">
+</form>
+
+<button (click)="delete()" class="fadeIn fourth"> delete</button>
+
+
